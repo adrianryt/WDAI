@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body{
+    background-color: black;
+}
+html{
+    scroll-behavior: smooth;
+}
+header{
+    position: relative;
+    width: 100%;
+    height: 60vw;
+    background-image: url("main_photo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 0 100%);
+}
+
+header h2{
+    position: absolute;
+    color: #e2c108;
+    font-size:7vw;
+    font-family: 'Lato', sans-serif;
+    margin-top: 15%;
+    margin-left: 8%;
+    overflow: hidden;
+    animation: typing 5s steps(150, end);
+    -webkit-text-stroke: 1.5px #b1980d;
+    
+}
+
+@keyframes typing {
+    0% { width: 0 }
+    100% { width: 100% }
+}
+
+
+*{ 
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+nav{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    background-color: black;
+}
+
+nav .wrapper{
+    position: relative;
+    padding: 0px;
+    height: 65px;
+    line-height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper .logo img{
+    margin-top: 30%;
+    padding-left: 10px;
+    width: 70px;
+}
+
+.wrapper .nav-links{
+    display: inline-flex;
+    margin-right: 5%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links li a{
+    color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin: 0 3px;
+}
+.nav-links li a:hover{
+    background: rgb(243, 247, 48);
+    color: black;
+    font-weight: bold;
+}
+nav input{
+    display: none;
+  }
+
+.wrapper .btn{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 800px) {  
+    .wrapper .btn{
+        display: block;
+        position: absolute;
+        right: 20px;
+        padding: 8px;
+        max-height: 50px;
+        top: -10px;
+        font-size: 25px;
+        text-align: center;
+    }
+    .wrapper .btn.close-btn{
+        display: block;
+        right: 21px;
+        opacity: 0;
+    }
+    
+    .wrapper .nav-links{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        max-width: 300px;
+        bottom: -130%;
+        left: 0%;
+        background: black;
+        display: block;
+        padding: 50px 10px;
+        overflow-y: auto;
+        transition: all 0.5s ease;
+    }
+    #menu-btn:checked ~ .nav-links{
+        bottom: -14%;
+        transition: all 0.5s ease
+    }
+    #menu-btn:checked ~ .menu-btn{
+        opacity: 0;
+        right: -30px;
+        transition: all 1s ease;
+    }
+    #menu-btn:checked ~ .close-btn{
+        opacity: 1;
+        transition: all 1s ease;
+    }
+    #close-btn:checked ~ .close-btn{
+        opacity: 0;
+        transition: all 1s ease;
+    }
+    #close-btn:checked ~ .menu-btn{
+        opacity: 1;
+        right:20px;
+        transition: all 1s ease;
+    }
+
+    .nav-links li a{
+        padding: 0 20px;
+        display: block;
+        font-size: 15px;
+        margin: 5px 0;
+      }
+}
+/* END OF MEDIA */
+
+mark{
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size:2vw;
+}
+
+.league{
+    margin-bottom: 5%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    min-height: 600px;
+}
+.soraka:hover{
+    transform: rotate(360deg);
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+.text{
+    font-family: 'Lato', sans-serif;
+    color: white;
+    margin: 8% 5%;
+}
+.text h2{
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 3%;
+}
+.column1{
+    position: relative;
+}
+.column1 img{
+    position: absolute;
+    right: 5vh;
+    bottom: 0vh;
+    box-shadow: 5px 10px 20px red inset
+}
+
+.photos{
+    position: relative;
+    height: 100%;
+}
+.photo-content{
+    display: block;
+    position: absolute;
+    width: 50%;
+    padding: 4%;
+    height: auto;
+}
+.photo{
+    display: block;
+    width:100%;
+    height: 100%;
+    box-shadow: 3px 3px 10px white;
+}
+#p1{
+    left: 5%;
+    top: 11%;
+}
+#p2{
+    width: 60%;
+    left:20%;
+    top: 30%;
+}
+#p3{
+    left:40%;
+    top:8%; 
+}
+
+.photo-content:hover{
+    z-index: 1;
+}
+.photo:hover{
+    box-shadow: 6px 6px 20px yellow;
+    transition: 0.6s ease;
+}
+/* MEDIA OF WHAT IS LEAGUE */
+@media screen and (max-width: 800px){
+.soraka{
+    display: none;
+}
+
+.league{
+    grid-template-columns: 90%;
+}
+.text{
+    margin-bottom: 0;
+    margin-left: 15%;
+}
+.photo-content{
+    width: 40%;
+}
+
+#p1{
+    left: 12%;
+    top: -80%;
+}
+#p2{
+    width: 50%;
+    left:30%;
+    top: -20%;
+}
+#p3{
+    left:47%;
+    top:-90%; 
+    width: 40%;
+}
+
+}
+
+
+
+/* BEST TEAMS  SEKCJA NUMER 3*/
+.teams{ 
+    padding-top: 20px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 25% 25% 25%;
+    gap: 3%;
+    width: 90%;
+    height: 600px;
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.column{
+    position: relative;
+    margin: 4%;
+    box-shadow: 2px 2px 20px #888888;
+    text-align: center;
+}
+
+.card-tekst{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 3%;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.column img{
+    width: 100%;
+    height: auto;
+}
+
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: 1s ease;
+}
+
+.column:hover .flip-box-inner {
+    transform: rotateY(180deg);
+    box-shadow: 3px 3px 20px #dfd003;
+    transition: 1s ease;
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.flip-box-front {
+    background-color: black;
+}
+
+.flip-box-back {
+    background-color:black;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+.flip-box-back p{
+    font-size: 20px;
+    padding: 5%;
+    font-family: 'Roboto Mono', monospace;
+}
+.flip-box-back img{
+   margin-bottom: 17%;
+}
+/* MEDIA OF CARDS */
+@media screen and (min-width: 900px) and (max-width: 1250px){
+.teams{
+    height: 520px;
+}
+}
+
+@media screen and (min-width: 800px) and (max-width: 899px){
+.teams{
+    height: 480px;
+}
+}
+
+@media screen and (min-width: 681px) and (max-width: 799px){
+.teams{
+    height: 2100px;
+    grid-template-columns: 50%;
+}
+}
+@media screen and (max-width: 680px){
+.teams{
+    height: 1800px;
+    grid-template-columns: 50%;
+}
+}
+
+/* SEKCJA NUMER 4*/
+.trophies{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.tro-wrap{
+    display: grid;
+    position: relative;
+    grid-template-rows: 48% 48%;
+    gap: 1%;
+    width: 92%;
+    justify-content: center;
+    margin: auto;
+    background-image: url("background_tro.jpg");
+}
+
+.msi{
+    filter: drop-shadow( 3px 3px 12px rgba(156, 146, 8, 0.5));
+}
+
+.worlds{
+    filter: drop-shadow( 3px 3px 15px rgba(44, 23, 233, 0.5));
+}
+
+.tro-wrap h2{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Roboto', sans-serif;
+}
+.tro-wrap p{
+    font-family: 'Open Sans', sans-serif;
+}
+.msi img{
+    width: 35%;
+    float: left;
+    clip-path: circle(37.0% at 46% 57%);
+    shape-outside: circle(47%);
+    margin-bottom: 2%;
+}
+.worlds img{
+    width: 35%;
+    float: left;
+    clip-path: circle(37.0% at 50% 57%);
+    shape-outside: circle(47%);
+}
+.msi img:hover{
+    width: 37%;
+    transform: rotate(10deg);
+    transition: 0.5s ease;
+}
+.worlds img:hover{
+    width: 37%;
+    transform: rotate(10deg);
+    transition: 0.5s ease;
+}
+
+footer{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    margin: auto;
+    border-top: 3px solid rgb(61, 5, 5);
+}
+
+.form{
+    margin-top: 1%;
+    width: 50%;
+    height: auto;
+    padding: 2%;
+    background-color: rgb(61, 5, 5);
+    border-radius: 20px;
+  
+}
+
+.form p{
+    color: gray;
+    font-size: 25px;
+}
+input[type=text] {
+    width: 100%;
+    padding: 3%;
+    margin-top:2%;
+    margin-bottom: 2%;
+    display: inline-block;
+    border: none;;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color:  rgb(104, 15, 15);
+}
+
+.button-form{
+    margin-top: 3%;
+    margin-left: 45%;
+    background-color: black;
+    padding: 1% 3% 1% 3%;
+    color: white;
+    border-radius: 8%;
+}
+
+.teemo{
+    width: 15%;
+    position: absolute;
+    left: 4%;
+    top:10%;
+
+}
+.sona{
+    width: 15%;
+    position: absolute;
+    right: 4%;
+    top: 20%;
+}
+
+.end_text{
+    display: block;
+    width: 15%;
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+    color: brown;
+}
