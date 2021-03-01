@@ -1,0 +1,24 @@
+
+<p>Minimal Price</p>
+<input type="range" name="minPrice" min={{minimalPrice}} max={{maximalPrice}} (change)="changeMin($event)">
+<div class="subPrice">
+  <p class="minPrice">{{minimalPrice}}</p>
+  <p class="markedPrice">{{newMinimalPrice}}</p>
+  <p class="maxPrice">{{maximalPrice}}</p>
+</div>
+
+<p>Maximus Price</p>
+<input type="range" name="maxPrice" min={{minimalPrice}} max={{maximalPrice}} value={{maximalPrice}} (change)="changeMax($event)" >
+<div class="subPrice">
+  <p class="minPrice">{{minimalPrice}}</p>
+  <p class="markedPrice">{{newMaximalPrice}}</p>
+  <p class="maxPrice">{{maximalPrice}}</p>
+</div>
+
+<p>Choose place to go:</p>
+<ul class="myContainer">
+  <li *ngFor="let country of Countries">
+    <input name={{country}} type="checkbox" (change)="changeCountry($event)">{{country}}
+  </li>
+</ul>
+

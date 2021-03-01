@@ -1,0 +1,13 @@
+<div class="bin-Wrapper">
+  <p class="bin">Your Travels</p>
+</div>
+
+<div *ngFor="let travel of travels">
+  <div *ngIf="travel.reserved > 0">
+    <p>Ilość rezerwacji wycieczki: {{travel.name}} -  {{travel.reserved}}
+       <ng-container *ngIf="travel.reserved === travel.capacity">FULL</ng-container>
+    </p>
+  </div>
+</div>
+
+<p class="total">Total: {{getSum()}} $</p>

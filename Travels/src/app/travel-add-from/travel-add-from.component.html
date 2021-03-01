@@ -1,0 +1,14 @@
+<div class="formWrapper">
+  <form [formGroup]="modelForm" (ngSubmit)="onSubmit(modelForm)">
+    <label>TravelName: </label> <input name="name" formControlName="name" /><br/>
+    <label>Country: </label> <input name="country" formControlName="country" /><br/>
+    <label>Start_date: </label> <input type="date" formControlName="start_date" /><br/>
+    <label>End_date: </label> <input type="date" formControlName="end_date" /><br/>
+    <label>Price: </label> <input name="price" formControlName="price" /><br/>
+    <label>Capacity: </label> <input name="capacity" formControlName="capacity"><br>
+    <label>Description: </label> <input name="description" formControlName="description"><br>
+    <label>img_link: </label> <input name="img_link" formControlName="img_link"><br>
+
+    <button type="submit">Add Travel</button>
+  </form>
+</div>

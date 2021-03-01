@@ -1,0 +1,7 @@
+.formWrapper{
+  margin-top: 8px;
+  margin-left: 2%;
+}
+form > input{
+  margin-left: 1%;
+}

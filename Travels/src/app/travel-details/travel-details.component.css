@@ -1,0 +1,71 @@
+.wrap{
+  position: relative;
+  width: 40%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 5%;
+  padding-bottom: 2%;
+  box-shadow: 3px 3px 15px gray;
+}
+
+img{
+  width: 100%;
+}
+.name{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.travel_date{
+  text-align: center;
+}
+.main_info{
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.description{
+  color: gray;
+  font-style: oblique;
+}
+
+.baner{
+  display: flex;
+  font-size: large ;
+  margin-left: 2%;
+  margin-top: 7%;
+}
+
+.buttons{
+  display: block;
+  float: right;
+  margin-right: 10%;
+  margin-top: -6%;
+
+  justify-content: center;
+}
+
+.reservation{
+  background-color: rgb(12, 202, 12);
+  border-radius: 15%;
+  margin: 2px;
+  border: none;
+  padding: 4px;
+}
+
+.resignation{
+  background-color: red;
+  border-radius: 15%;
+  border: none;
+  padding: 4px;
+}
+
+.deletebutton{
+  background-color: black;
+  color: white;
+  border-radius: 8%;
+  margin: 2px;
+  border: none;
+  padding: 4px;
+}

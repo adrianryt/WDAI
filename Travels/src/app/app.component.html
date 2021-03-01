@@ -1,0 +1,20 @@
+<nav>
+  <div class="wrapper">
+      <div class="logo"></div>
+      <ul class="MenuRout">
+        <div *ngIf="!loggedIN; else signout">
+          <li><a routerLink='login' routerLinkActive="active">Login</a></li>
+        </div>
+        <ng-template #signout>
+          <li><a (click)="logOut()" >Wyloguj</a></li>
+        </ng-template>
+        <li><a routerLink='travels' routerLinkActive="active">Travels-List</a></li>
+        <li><a routerLink='form' routerLinkActive="active">Add-Form</a></li>
+        <li><a routerLink='bin' routerLinkActive="active">Your Bin</a></li>
+      </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+

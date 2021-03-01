@@ -1,0 +1,32 @@
+  <div class="wrap">
+    <app-rating></app-rating>
+
+  <div class="photo">
+    <img src={{travel.img_link}} alt="picture">
+    <br><p class="name"> {{travel.name | uppercase}}</p> <br>
+    <div class="travel_date">
+      <p>Start: {{travel.start_date | date: 'dd/MM/yyyy'}} </p>
+      <p>End: {{travel.end_date | date: 'dd/MM/yyyy'}}</p><br>
+    </div>
+  </div>
+
+  <div class="main_info">
+    <p>Country: {{travel.country | uppercase}}</p>
+    <p>Price: {{travel.price}} $</p>
+    <p [ngStyle]="{'color': travel.capacity - travel.reserved <=1 ? 'red': 'black'}">Places: {{travel.reserved}} / {{travel.capacity}} </p><br>
+    <p class="description">{{travel.description}}</p>
+  </div>
+
+  <div class="baner">
+    <p *ngIf='travel.capacity - travel.reserved > 1'> Free places!!!</p>
+    <p *ngIf='travel.capacity - travel.reserved === 1'> Last Place!!!</p>
+  </div>
+
+  <div class="buttons">
+    <button  [hidden]="!(travel.reserved < travel.capacity)" class="reservation" (click)="addReservation()">Add</button>
+    <button  [hidden]="!(travel.reserved > 0)" class="resignation" (click)="removeReservation()">Remove</button>
+    <button class="deletebutton" (click)="deleteTravel()">DELETE</button>
+  </div>
+
+
+  </div>

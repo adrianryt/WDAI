@@ -1,0 +1,27 @@
+*{
+  font-family: Arial;
+}
+.bin{
+  text-align: center;
+  font-size: 150%;
+  padding:5%;
+  border-radius: 8px;
+  background: #6e037c;
+  color: white;
+  width: auto;
+  margin: auto;
+}
+.bin-Wrapper{
+  width: 40%;
+  margin: auto;
+  margin-top: 8px;
+}
+p{
+  width: 40%;
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+  background: #9490e3;
+  border-radius: 8px;
+}
+

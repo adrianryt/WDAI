@@ -1,0 +1,25 @@
+<div class="container">
+  <form>
+    <label>
+      E-mail
+      <input type="email" [(ngModel)]="email" name="email">
+    </label>
+    <label>
+      Hasło
+      <input type="password" [(ngModel)]="password" name="password">
+    </label>
+    <button type="button" (click)="login()" class="btn btn-primary">Zaloguj</button>
+    <button type="button" (click)="register()" class="btn btn-primary">Register</button>
+  </form>
+</div>
+
+
+<div>
+  <div class="container">
+    CHOOSE YOUR PERSISTENCE
+    <button class="btn btn-primary" (click)="setNone()" >NONE</button>
+    <button class="btn btn-primary" (click)="setSession()">SESSION</button>
+    <button class="btn btn-primary" (click)="setLocal()">LOCAL</button>
+  </div>
+</div>
+
