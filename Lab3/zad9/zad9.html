@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="zad9_myStyle.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div id ="content">
+            <div class="person">
+                <p class="name">Tadeusz Jarzyna</p>
+                <p class="numer"> 111 222 333</p>
+                <button class="delete" id="0" onclick="removeItem(this.id)">X</button>
+            </div>
+            <div class="person">
+                <p class="name">Anka Z Tamburynowa</p>
+                <p class="numer1"> 600 900 600</p>
+                <button class="delete" id="1" onclick="removeItem(this.id)">X</button>
+            </div>
+        </div>
+
+        <form>
+            <div class="form_window">
+                <label for="name">IMIE I NAZWISKO:</label><br>
+                <input type="text" id="name" name="name">
+            </div>
+           
+            <div class="form_window2">
+                <label for="phone">TELEFON</label><br>
+                <input type="text" id="phone" name="phone">
+            </div>
+
+            <button type="button" class="add" onclick="add()">DODAJ</button>
+        </form>
+    </div>
+
+    <script>
+        var counter = 2;
+        function add(){
+            var content = document.getElementById("content");
+            var name = document.getElementById("name");
+            var phone = document.getElementById("phone");
+            if(validation(name, phone)){
+                var adddiv = document.createElement("div");
+                var addname = document.createElement("p");
+                var addphone = document.createElement("p");
+                var addbutton = document.createElement("button");
+                adddiv.setAttribute("class", "person");
+                addbutton.setAttribute("id", counter);
+                addbutton.setAttribute("class", "delete");
+                addbutton.setAttribute("onclick", "removeItem(this.id)");
+                addname.setAttribute("class","name");
+                addphone.setAttribute("class", "number");
+                addname.textContent = name.value;
+                addphone.textContent = phone.value;
+                addbutton.textContent = "X";
+                adddiv.appendChild(addname);
+                adddiv.appendChild(addphone);
+                adddiv.appendChild(addbutton);
+                content.appendChild(adddiv);
+                name.value = "";
+                phone.value = "";
+                counter++;
+            }
+           
+        }
+
+        function removeItem(id){
+            var toDelete = document.getElementById(String(id));
+            toDelete = toDelete.parentNode;
+            toDelete.parentNode.removeChild(toDelete);
+        }
+        function validation(name, phone){
+            var nameReg = /^[a-zA-Z\s]*$/; 
+            var phoneReg = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{3}$/;
+            if(!(name.value).match(nameReg)){
+                alert("Name: Only letters allowed");
+            }
+            if(!(phone.value).match(phoneReg)){
+                alert("Phone: Wrong number");
+            }
+            return (name.value).match(nameReg) && 
+                   (phone.value).match(phoneReg);
+        }
+
+    </script>
+
+
+</body>
+</html>

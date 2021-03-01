@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+      input{
+          margin-top: 10px;
+      }
+    </style>
+
+        <datalist id="sex">
+            <option value="Mężczyzna">
+            <option value="Kobieta">
+        </datalist>
+
+        Name: <input type="text" id="fname"><br>
+        LastName: <input type="text" id="lname"><br>
+        nr_tel: <input type="text" id="nr_tel" ><br>
+        Sex: <input type="text" id="sex" list="sex" ><br>
+        birth_date: <input type="date" id="birth_date"><br>
+        em_date: <input type="date" id="em_date"><br>
+        
+
+        <button type="button" onclick="validateForm()">Submit</button>
+
+    <script>
+        function validateForm() {
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var nr_tel = document.getElementById("nr_tel").value;
+        var sex = document.getElementById("sex").value;
+        var birth_date = new Date(document.getElementById("birth_date").value);
+        var em_date = new Date(document.getElementById("em_date").value);
+        var regex = /^[A-Za-z]+$/;
+        var pattern= /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{3}$/;
+        var difference = ( em_date.getTime() - birth_date.getTime()) / (1000 * 3600 * 24); 
+        var difference_year = ( em_date.getTime() - birth_date.getTime()) / (1000 * 3600 * 24 * 365);
+
+        if (!fname.match(regex)) {
+            alert("Name: Only letters allowed");
+        }
+
+        if (!lname.match(regex)) {
+            alert("LName: Only letters allowed");
+        }
+        if (!nr_tel.match(pattern)) {
+            alert("Nr:Wrong pattern");
+        }
+
+        if(difference < 0){
+            alert("em_date < birth_date");
+        }
+
+        if(difference_year > 65){
+            alert("Dane pozwalają na emeryture");
+        }
+        else{
+            alert("Za młody/młoda na emeryture");
+        }
+        }
+    </script>
+        
+</body>
+</html>

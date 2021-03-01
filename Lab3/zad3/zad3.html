@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+     </div>
+     
+    <p>Licznik wynosi: </p>
+    <p id="counter">0</p>
+    <button id="increment" onclick="increment()">Wciśnij mnie żeby inkrementować licznik</button>
+    <button id="reset">Wciśnij mnie żeby zresetować licznik</button>
+    <button id="addEvent" onclick="flagf()"> Wciśnij mnie by móc dodawać</button>
+
+    <script>
+        var flag = false;
+        function increment() {
+            if(flag){
+                var counter = document.getElementById("counter");
+                counter.innerHTML = parseInt(counter.innerHTML) + 1;
+                counter.style.color = "blue"; 
+                counter.innerHTML = "SIEMA";
+            }
+
+            let text = "Ola";
+            text[0] = 'E';
+            let text1 = text;
+            let text2 = [...text];
+            text2[0] = 'A';
+            console.log( text,text1, text2);  
+
+        }
+
+        document.getElementById("reset").onclick = function() {myFunction()};
+
+        function myFunction() {
+            var counter = document.getElementById("counter");
+            counter.innerHTML = 0;
+        }
+
+        function flagf(){
+            if(flag){
+                flag=false;
+                document.getElementById("addEvent").innerHTML = "Wciśnij mnie by móc dodawać"
+            }
+            else{
+                flag=true;
+                document.getElementById("addEvent").innerHTML = "Wciśnij mnie aby wyłączyć możliwość dodawania"
+            }
+        }
+
+
+    </script>
+</body>
+</html>

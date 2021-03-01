@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    liczby: <input type="text" id="numbers"><br>
+    <button id="getMax" onclick="licz()">weź największą!</button>
+    <p id="maxNum"></p>
+
+    <script>
+        function licz(){
+            var len = document.getElementById("numbers").value.length;
+            var table = document.getElementById("numbers").value;
+            var arguments = [];
+            var regex = /^[0-9]*$/;
+            for(i = 0; i<len; i++){
+                var liczba = '';
+                for(j = i; j<len; j++){
+                    if(table[j] != ' '){
+                        if(!table[j].match(regex)){
+                        alert("ONLY NUMBERS ALLOWED");
+                        liczba='';
+                        break;
+                        }
+                        else{
+                            liczba += table[j];
+                        }
+                        
+                    }
+                    else{
+                        break;
+                    }
+                }
+                if(liczba != ''){
+                    arguments = arguments.concat(parseInt(liczba));
+                }
+                i=j;
+            }
+            if(arguments.length >= 2){
+                liczMax(arguments);
+            }
+            else{
+                alert("ADD MORE NUMBERS");
+            }
+            
+        }
+
+        function liczMax(arguments){
+            var maks = arguments[0];
+            for(i= 0; i<arguments.length; i++){
+                if(arguments[i]>maks){
+                    maks=arguments[i];
+                }
+            }
+            document.getElementById("maxNum").innerHTML = maks;
+        }
+
+    </script>
+    
+</body>
+</html>

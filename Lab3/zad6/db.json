@@ -1,0 +1,44 @@
+{
+    "people": [
+        {
+            "name": "Adrian",
+            "age": "20"
+        },
+        {
+            "name": "Roman",
+            "age": "25"
+        },
+        {
+            "name": "Julia",
+            "age": "19"
+        },
+        {
+            "name": "Katarzyna",
+            "age": "45"
+        },
+        {
+            "name": "Jan",
+            "age": "33"
+        },
+        {
+            "name": "Adam",
+            "age": "45"
+        },
+        {
+            "name": "Dominik",
+            "age": "42"
+        },
+        {
+            "name": "Mariusz",
+            "age": "9"
+        },
+        {
+            "name": "Dawid",
+            "age": "15"
+        },
+        {
+            "name": "Laura",
+            "age": "58"
+        }
+    ]
+}

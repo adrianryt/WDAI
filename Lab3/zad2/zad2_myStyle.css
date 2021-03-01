@@ -1,0 +1,12 @@
+
+.img_div{
+    display: flex;
+    width: 600px;
+    height: 500px;
+    justify-content: center;
+    margin: auto;
+}
+.img_div img{
+    width: 100%;
+    border: 3px solid red;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie4</title>
+</head>
+<body>
+    <ul id="list">
+        <li>element listy 1</li>
+         <li>element listy 2</li>
+    </ul>
+    <button onclick="addItem()">Dodaj element</button>
+    <button id="removeItem" >Usuń element</button>
+
+    <script>
+        
+    document.getElementById("removeItem").onclick = function() {removeItem()};
+
+    function addItem() {
+        var node = document.createElement("li");
+        var n = list.getElementsByTagName("li").length;
+        var textnode = document.createTextNode("element listy");
+        node.appendChild(textnode);
+        node.appendChild(document.createTextNode(" " + (n+1)));
+        document.getElementById("list").appendChild(node);
+    }
+
+    function removeItem() {
+        var list = document.getElementById("list");
+
+        if (list.hasChildNodes()) {
+            list.removeChild(list.firstElementChild);
+        }
+    }
+    </script>
+    
+</body>
+</html>
